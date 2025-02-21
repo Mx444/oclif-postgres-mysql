@@ -1,4 +1,3 @@
-// src/lib/backupFunctions.ts
 import { exec } from "child_process";
 import util from "util";
 import path from "path";
