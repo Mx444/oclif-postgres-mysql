@@ -15,7 +15,7 @@ npm install
 Per eseguire il backup di un database, utilizzare il comando:
 
 ```bash
-npx db-backup-cli --dbType <tipo-di-database>
+node dist/index.js backup --dbType <tipo-di-database>
 ```
 
 Sostituire `<tipo-di-database>` con `mysql` o `postgres`.
