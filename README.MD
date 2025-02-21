@@ -16,6 +16,8 @@ Per eseguire il backup di un database, utilizzare il comando:
 
 ```bash
 node dist/index.js backup --dbType <tipo-di-database>
+npm run pg
+npm run mysql
 ```
 
 Sostituire `<tipo-di-database>` con `mysql` o `postgres`.
