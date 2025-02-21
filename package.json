@@ -1,0 +1,31 @@
+{
+  "name": "db-backup-cli",
+  "version": "1.0.0",
+  "description": "Utility CLI in TypeScript per il backup di database generici",
+  "main": "dist/index.js",
+  "bin": {
+    "db-backup-cli": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/index.ts",
+    "test": "jest"
+  },
+  "author": "Tuo Nome",
+  "license": "MIT",
+  "dependencies": {
+    "@oclif/core": "^3.0.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/jest": "^29.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.9.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.0.0"
+  },
+  "oclif": {
+    "commands": "dist/commands"
+  }
+}
