@@ -1,53 +1,94 @@
 # 📦 db-backup-cli
 
-**db-backup-cli** è una utility CLI scritta in TypeScript per il backup di database generici. Supporta attualmente MySQL e PostgreSQL.
+<p align="center">
+  <img src="https://icons.veryicon.com/png/o/internet--web/2022-alibaba-cloud-product-icon-cloud/cbs-database-backup.png" alt="DB Logo" width="200" >
+</p>
 
-## 🚀 Installazione
+A TypeScript CLI utility for database backups. Currently supports MySQL and PostgreSQL databases.
 
-Per installare le dipendenze, eseguire:
+## 🚀 Installation
+
+To install dependencies, run:
 
 ```bash
 npm install
 ```
 
-## 🛠️ Utilizzo
+## 🔨 Build
 
-Per eseguire il backup di un database, utilizzare il comando:
+Compile the TypeScript code:
 
 ```bash
-node dist/index.js backup --dbType <tipo-di-database>
-npm run pg
-npm run mysql
+npm run build
 ```
 
-Sostituire `<tipo-di-database>` con `mysql` o `postgres`.
+## 🛠️ Usage
 
-## ⚙️ Configurazione
+You can run the CLI in several ways:
 
-Creare un file `.env` nella radice del progetto e aggiungere le seguenti variabili di ambiente:
+### Using the CLI directly
+
+```bash
+node dist/index.js backup --dbType <database-type>
+```
+
+Replace `<database-type>` with either `mysql` or `postgres`.
+
+### Using npm scripts
+
+```bash
+npm run pg    # For PostgreSQL backup
+npm run mysql # For MySQL backup
+```
+
+## ⚙️ Configuration
+
+Create a `.env` file in the project root with the following environment variables:
 
 ```env
-DB_USER=tuo_utente
-DB_PASSWORD=tua_password
+DB_USER=your_username
+DB_PASSWORD=your_password
 DB_HOST=localhost
-DB_PORT=porta_database
-DB_NAME=nome_database
+DB_PORT=database_port
+DB_NAME=database_name
 ```
 
-## 📜 Script npm
+## 🧩 Project Structure
 
-- `build`: Compila il progetto TypeScript
-- `start`: Avvia il progetto in modalità sviluppo
-- `test`: Esegue i test con Jest
+```
+src/
+├── commands/       # CLI commands
+│   └── backup.ts   # Backup command implementation
+├── config/         # Configuration
+│   └── index.ts    # Environment variables setup
+├── index.ts        # Main entry point
+├── lib/            # Core functionality
+│   └── backupFunctions.ts  # Database backup implementations
+└── utils/
+    └── logger.ts   # Logging utilities
+```
 
-## 🧪 Test
+## 🔍 Features
 
-Per eseguire i test, utilizzare:
+- **Multiple Database Support**: Backup both MySQL and PostgreSQL databases
+- **Timestamped Backups**: Each backup file includes a timestamp
+- **Error Handling**: Comprehensive error handling with appropriate exit codes
+- **Logging**: Detailed logging of backup operations
+
+## 📋 Exit Codes
+
+- `0`: Success
+- `1`: Invalid database type
+- `2`: Backup operation failed
+
+## 🧪 Testing
+
+To run tests:
 
 ```bash
 npm test
 ```
 
-## 📄 Licenza
+## 📄 License
 
-Questo progetto è sotto licenza MIT. Vedi il file [LICENSE](LICENSE) per maggiori dettagli.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
